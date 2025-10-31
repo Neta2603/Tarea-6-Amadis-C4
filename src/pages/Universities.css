@@ -12,6 +12,8 @@
 .globe-icon {
   font-size: 50px;
   animation: float 3s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration for Android */
 }
 
 .school-icon {
@@ -44,15 +46,17 @@
   margin: 15px 0;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-left: 5px solid #4ade80;
   overflow: hidden;
   background: white;
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration for Android */
 }
 
 .university-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
 }
 
 .university-header {
@@ -112,24 +116,29 @@
 .link-value {
   color: #22c55e;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
-.link-value:hover {
+.link-value:hover,
+.link-value:active {
   color: #16a34a;
-  transform: translateX(5px);
+  transform: translateX(5px) translateZ(0);
 }
 
 .link-value::after {
   content: '→';
   font-size: 1.2em;
   transition: transform 0.3s ease;
+  will-change: transform;
 }
 
-.link-value:hover::after {
+.link-value:hover::after,
+.link-value:active::after {
   transform: translateX(5px);
 }
 
@@ -194,7 +203,7 @@
   }
 }
 
-/* Animation for list items */
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -203,6 +212,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-10px) translateZ(0);
   }
 }
 

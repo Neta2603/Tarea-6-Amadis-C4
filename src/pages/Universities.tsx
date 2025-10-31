@@ -48,18 +48,29 @@ const Universities: React.FC = () => {
     setUniversities([]);
 
     try {
-      // Using the original API endpoint
+      // Using GitHub raw JSON (has HTTPS and works on mobile)
       const response = await axios.get(
-        `http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`
+        'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json'
       );
-      
-      if (response.data && response.data.length > 0) {
-        setUniversities(response.data);
+
+      if (response.data && Array.isArray(response.data)) {
+        // Filter universities by country locally
+        const countryLower = country.toLowerCase().trim();
+        const filtered = response.data.filter((uni: University) =>
+          uni.country.toLowerCase().includes(countryLower)
+        );
+
+        if (filtered.length > 0) {
+          setUniversities(filtered);
+        } else {
+          setError('No se encontraron universidades para este país. Intenta con el nombre en inglés (ej: Dominican Republic).');
+        }
       } else {
-        setError('No se encontraron universidades para este país. Intenta con el nombre en inglés.');
+        setError('Error al procesar los datos.');
       }
     } catch (err) {
-      setError('Error al obtener datos. Verifica el nombre del país en inglés (ej: Dominican Republic)');
+      setError('Error al obtener datos. Verifica tu conexión a internet.');
+      console.error('Error fetching universities:', err);
     } finally {
       setLoading(false);
     }
