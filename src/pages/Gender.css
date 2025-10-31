@@ -1,0 +1,247 @@
+.gender-content {
+  --background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.gender-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.input-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.icon-header {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.gender-icon {
+  font-size: 60px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.gender-icon.male {
+  color: #667eea;
+}
+
+.gender-icon.female {
+  color: #ec4899;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 15px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.custom-input {
+  --background: #f1f5f9;
+  --border-radius: 15px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  margin: 20px 0;
+  font-size: 1.1em;
+}
+
+.custom-button {
+  --border-radius: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+  height: 50px;
+}
+
+.error-message {
+  text-align: center;
+  color: #ef4444;
+  margin-top: 15px;
+  padding: 10px;
+  background: #fee2e2;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Result Card */
+.result-card {
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  opacity: 0.1;
+}
+
+.male-result::before {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.female-result::before {
+  background: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%);
+}
+
+.result-header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.result-icon {
+  font-size: 100px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.male-result .result-icon {
+  color: #667eea;
+}
+
+.female-result .result-icon {
+  color: #ec4899;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.result-name {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #fee2e2;
+  text-transform: capitalize;
+}
+
+.gender-badge-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gender-badge {
+  font-size: 1em;
+  padding: 10px 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  padding: 25px;
+  background: #f8fafc;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.stats-container:hover {
+  background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #475569;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.probability-bar {
+  height: 15px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+}
+
+.probability-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  animation: fillBar 1s ease-out;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gender-icon {
+    font-size: 50px;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .result-icon {
+    font-size: 80px;
+  }
+
+  .result-name {
+    font-size: 1.6em;
+  }
+
+  .stat-value {
+    font-size: 1.5em;
+  }
+}

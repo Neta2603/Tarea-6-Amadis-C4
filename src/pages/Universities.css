@@ -1,0 +1,212 @@
+.universities-content {
+  --background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.universities-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.school-icon,
+.globe-icon {
+  font-size: 50px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.school-icon {
+  color: #4ade80;
+  animation-delay: 0.3s;
+}
+
+.globe-icon {
+  color: #22c55e;
+}
+
+.results-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.results-badge {
+  font-size: 1.1em;
+  padding: 12px 25px;
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.universities-list {
+  padding: 0;
+  background: transparent;
+}
+
+.university-card {
+  margin: 15px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #4ade80;
+  overflow: hidden;
+  background: white;
+}
+
+.university-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+}
+
+.university-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.uni-icon {
+  font-size: 32px;
+  color: #4ade80;
+  background: linear-gradient(135deg, #d0fce2 0%, #a7f3d0 100%);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.university-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.info-list {
+  padding: 0;
+  background: transparent;
+}
+
+.info-item {
+  --background: #f8fafc;
+  --padding-start: 0;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+
+
+.info-label {
+  font-size: 0.85em;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 1.1em;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.link-value {
+  color: #22c55e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.link-value:hover {
+  color: #16a34a;
+  transform: translateX(5px);
+}
+
+.link-value::after {
+  content: '→';
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.link-value:hover::after {
+  transform: translateX(5px);
+}
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+}
+
+.loading-text {
+  color: #64748b;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 80px;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.empty-title {
+  font-size: 1.5em;
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.empty-description {
+  color: #64748b;
+  font-size: 1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .school-icon,
+  .globe-icon {
+    font-size: 40px;
+  }
+
+  .university-name {
+    font-size: 1.05em;
+  }
+
+  .uni-icon {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .info-value {
+    font-size: 0.95em;
+  }
+}
+
+/* Animation for list items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}

@@ -1,0 +1,347 @@
+.about-content {
+  --background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #f8f9fa 100%);
+}
+
+.about-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background: white;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: ripple 4s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.profile-image-container {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.5s ease-out;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-icon {
+  font-size: 80px;
+  color: #667eea;
+}
+
+.profile-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.profile-name {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 25px 0 10px;
+}
+
+.profile-title {
+  text-align: center;
+  font-size: 1.1em;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.profile-bio {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.profile-bio p {
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Contact Card */
+.contact-card,
+.skills-card,
+.social-card,
+.app-info-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  background: white;
+}
+
+.section-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title ion-icon {
+  font-size: 1.3em;
+  color: #667eea;
+}
+
+.contact-list {
+  padding: 0;
+  background: transparent;
+}
+
+.contact-item {
+  --background: #f8fafc;
+  --padding-start: 0;
+  margin: 15px 0;
+  border-radius: 20px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.contact-item:hover {
+  --background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
+  background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+}
+
+.contact-item ion-icon {
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.contact-label {
+  font-size: 0.85em;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.contact-value {
+  font-size: 1.1em;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill-chip {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color: white;
+  font-weight: 600;
+  padding: 5px 15px;
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-button {
+  --border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.1em;
+  height: 55px;
+}
+
+.github-button {
+  --background: #1e293b;
+  --background-hover: #0f172a;
+}
+
+.linkedin-button {
+  --background: #0077b5;
+  --background-hover: #006399;
+}
+
+/* App Info */
+.app-description {
+  padding: 20px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 15px;
+  border-left: 4px solid #667eea;
+}
+
+.app-description p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.app-description p:last-child {
+  margin-bottom: 0;
+}
+
+.version-info {
+  font-size: 0.9em;
+  color: #64748b !important;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px !important;
+}
+
+/* Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-icon {
+    font-size: 70px;
+  }
+
+  .profile-ring {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-name {
+    font-size: 1.5em;
+  }
+
+  .profile-title {
+    font-size: 1em;
+  }
+
+  .section-title {
+    font-size: 1.2em;
+  }
+
+  .contact-item ion-icon {
+    font-size: 24px;
+  }
+
+  .social-button {
+    font-size: 1em;
+    height: 50px;
+  }
+}

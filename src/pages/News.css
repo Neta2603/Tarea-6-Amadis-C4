@@ -1,0 +1,259 @@
+.news-content {
+  --background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.news-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* News Header */
+.news-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #00aa00 100%);
+  border-radius: 25px;
+  margin-bottom: 30px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 170, 0, 0.3);
+}
+
+.wordpress-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.wp-icon {
+  width: 80px;
+  height: 80px;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.news-header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin: 15px 0 10px;
+}
+
+.news-header p {
+  font-size: 1.1em;
+  opacity: 0.95;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 20px;
+}
+
+.news-spinner {
+  font-size: 48px;
+  color: #00aa00;
+}
+
+.loading-text {
+  color: #64748b;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* Error Card */
+.error-card {
+  margin: 40px 0;
+  border-radius: 20px;
+}
+
+.error-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  font-size: 80px;
+  color: #ef4444;
+  margin-bottom: 20px;
+}
+
+/* News List */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* News Card */
+.news-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-top: 4px solid #00aa00;
+  background: white;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 170, 0, 0.25);
+}
+
+/* News Image */
+.news-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.1);
+}
+
+.news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.news-badge {
+  font-size: 0.9em;
+  padding: 8px 15px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* News Meta */
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #475569;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.meta-icon {
+  font-size: 18px;
+}
+
+.news-date {
+  text-transform: capitalize;
+}
+
+/* News Title */
+.news-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* News Excerpt */
+.news-excerpt {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+/* Visit Button */
+.visit-button {
+  --border-radius: 15px;
+  margin-top: 15px;
+  font-weight: 600;
+  height: 48px;
+  --box-shadow: 0 4px 15px rgba(0, 170, 0, 0.3);
+  --background: #00aa00;
+}
+
+.visit-button:hover {
+  --box-shadow: 0 6px 20px rgba(0, 170, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wp-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .news-header h1 {
+    font-size: 1.8em;
+  }
+
+  .news-header p {
+    font-size: 1em;
+  }
+
+  .news-image-container {
+    height: 200px;
+  }
+
+  .news-title {
+    font-size: 1.2em;
+  }
+
+  .news-excerpt {
+    font-size: 0.95em;
+  }
+}
+
+/* Card number indicators */
+.news-card:nth-child(1) {
+  border-top-color: #00aa00;
+}
+
+.news-card:nth-child(2) {
+  border-top-color: #00cc00;
+}
+
+.news-card:nth-child(3) {
+  border-top-color: #00ee00;
+}

@@ -1,0 +1,201 @@
+.app-container {
+  min-height: 100vh;
+}
+
+/* Animaciones globales */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+
+ion-menu ion-header ion-toolbar {
+  --background: transparent;
+  --color: white;
+  --border-color: transparent;
+}
+
+ion-menu ion-content {
+  --background: transparent;
+  --color: white;
+}
+
+ion-menu ion-list {
+  background: transparent;
+  padding: 8px 0;
+}
+
+ion-menu ion-item {
+  --background: transparent;
+  --color: white;
+  --border-color: transparent;
+  --inner-border-width: 0;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 4px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+ion-menu ion-item:hover {
+  --background: rgba(255, 255, 255, 0.15);
+  --color: white;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-menu ion-item.selected {
+  --background: rgba(255, 255, 255, 0.2);
+  --color: white;
+  font-weight: 600;
+}
+
+ion-menu ion-icon {
+  font-size: 22px;
+  margin-right: 12px;
+  color: white;
+  opacity: 0.9;
+}
+
+ion-menu ion-label {
+  color: white;
+  font-weight: inherit;
+}
+
+/* Cards con sombra y animación */
+.tool-card {
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones personalizados */
+.custom-button {
+  --border-radius: 25px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* Inputs personalizados */
+.custom-input {
+  --border-radius: 15px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers con gradiente */
+.gradient-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Contenedor de resultados */
+.result-container {
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Badges personalizados */
+.custom-badge {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* Grid de herramientas */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+.tool-item {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading spinner personalizado */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+}
